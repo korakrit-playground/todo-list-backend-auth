@@ -9,7 +9,7 @@ module.exports = (sequelize, DataTypes) => {
     });
 
     model.associate = models => {
-        model.hasMany(models.TodoList, { foreignKey: 'user_id' })
+        model.belongsTo(models.User, { foreignKey: 'user_id' })
     }
     return model;
 }
